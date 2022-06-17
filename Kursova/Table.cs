@@ -110,6 +110,10 @@ namespace Kursova
             string KG = textBox5.Text;
 
             dataGridView1.Rows.Add(name,data,fio,time,KG);
+            if (textBox1.Text == "")
+            {
+                MessageBox.Show("Введите данные");
+            }
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -172,6 +176,12 @@ namespace Kursova
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            int ind = dataGridView1.SelectedCells[0].RowIndex;
+            dataGridView1.Rows.RemoveAt(ind);
         }
     }
 }
